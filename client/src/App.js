@@ -13,34 +13,7 @@ class App extends Component {
   };
 
   googleResponse = async response => {
-    const headers = {
-      'Content-Type': 'application/json',
-    };
-
-    const query = JSON.stringify({
-      query: `mutation { authGoogle(input: { accessToken: "${
-        response.accessToken
-      }" }) { token name } } `,
-    });
-
-    const options = {
-      method: 'POST',
-      headers,
-      body: query,
-      mode: 'cors',
-      cache: 'default',
-    };
-
-    const resourceResponse = await fetch('http://localhost:4000', options);
-    const user = await resourceResponse.json();
-    const {
-      data: {
-        authGoogle: { token, name },
-      },
-    } = user;
-    if (token) {
-      this.setState({ isAuthenticated: true, name, token });
-    }
+    console.log(response);
   };
 
   onFailure = error => {
@@ -56,7 +29,7 @@ class App extends Component {
         <p>Authenticated</p>
         <div>{name}</div>
         <div>
-          <button onClick={logout} className="button">
+          <button onClick={logout} className='button'>
             Log out
           </button>
         </div>
@@ -65,14 +38,14 @@ class App extends Component {
       <div>
         <GoogleLogin
           clientId={config.GOOGLE_CLIENT_ID}
-          buttonText="Login"
+          buttonText='Login'
           onSuccess={googleResponse}
           onFailure={onFailure}
         />
       </div>
     );
 
-    return <div className="App">{content}</div>;
+    return <div className='App'>{content}</div>;
   }
 }
 

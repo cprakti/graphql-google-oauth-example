@@ -49,6 +49,9 @@ If you have not already, please install:
 - OAuth overview - https://www.digitalocean.com/community/tutorials/an-introduction-to-oauth-2
 - Create a project - https://console.developers.google.com/
 - GraphQL auth strategies - https://blog.apollographql.com/authorization-in-graphql-452b1c402a9
+- Brew install mongodb - https://treehouse.github.io/installation-guides/mac/mongo-mac.html
+- Mongoose overview - https://www.freecodecamp.org/news/introduction-to-mongoose-for-mongodb-d2a7aa593c57/
+- Passport docs - http://www.passportjs.org/docs/authenticate/
 
 ### References
 
