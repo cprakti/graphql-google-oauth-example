@@ -18,10 +18,6 @@ const UserSchema = new Schema({
     unique: true,
   },
   social: {
-    facebookProvider: {
-      id: String,
-      token: String,
-    },
     googleProvider: {
       id: String,
       token: String,
@@ -40,7 +36,7 @@ UserSchema.methods.generateJWT = function() {
       id: this._id,
       exp: parseInt(expirationDate.getTime() / 1000, 10),
     },
-    'secret'
+    'secret' // should be in env
   );
 };
 

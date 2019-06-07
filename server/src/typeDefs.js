@@ -11,11 +11,6 @@ module.exports = gql`
     accessToken: String!
   }
 
-  type Query {
-    "A simple type for getting started!"
-    hello: String
-  }
-
   type Mutation {
     authGoogle(input: AuthInput!): AuthResponse
   }
